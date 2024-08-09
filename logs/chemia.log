@@ -1,0 +1,13 @@
+2024-08-08 15:52:21:INFO:*****Test_01_AdminLogin*****
+2024-08-08 15:52:21:INFO:****verification of admin login page title*****
+2024-08-08 15:52:26:INFO:*****Test title verification matches*****
+2024-08-08 15:52:43:INFO:******Add equipment is started*********
+2024-08-08 15:52:44:INFO:*****Logged into application*****
+2024-08-08 15:53:02:INFO:*****Test_02_Add_Material_started*****
+2024-08-08 15:53:03:INFO:*****Test_02_Add_Material_logged into application*****
+2024-08-08 15:53:04:INFO:*****Navigated to dashboard*****
+2024-08-08 15:53:39:INFO:*****Test_03_Add_Vendor_started*****
+2024-08-08 15:53:40:INFO:*****Test_03_has started*****
+2024-08-08 15:53:40:INFO:*****navigated to dashboard*****
+2024-08-08 15:54:04:INFO:********Vendor Mapping Test Started***********
+2024-08-08 15:54:05:INFO:*****Logged into application*****
