@@ -1,6 +1,7 @@
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.common.action_chains import ActionChains
 
 #//p-dropdown[@formcontrolname='materialtype']//div[@class='p-dropdown p-component']
 class AddMaterial:
@@ -13,8 +14,8 @@ class AddMaterial:
     textBox_code_Xpath="//input[@formcontrolname='materialcode']"
     textBox_materialName_Xpath="//input[@formcontrolname='materialname']"
     textBox_abbreviation_Xpath="//input[@formcontrolname='materialshortcode']"
-    uom_select_Id="pr_id_8_label"
-    dropDown_uomGm_Xpath="//li[@id='p-highlighted-option']"
+    uom_select_Xpath="//p-dropdown[@formcontrolname='uom']"
+    dropDown_uomGm_Xpath="//li[@aria-label='gm']"
     textBox_alertLevl_Xpath="//input[@formcontrolname='alertlevel']"
     textBox_technicalGrade_Xpath="//input[@formcontrolname='technicalgrade']"
     textBox_storageCondition_Xpath="//input[@formcontrolname='storagecondition']"
@@ -56,10 +57,12 @@ class AddMaterial:
         self.driver.find_element(By.XPATH,self.textBox_abbreviation_Xpath).send_keys(abbreviation)
 
     def select_uom(self):
-        self.driver.find_element(By.ID,self.uom_select_Id).click()
+        self.driver.find_element(By.XPATH,self.uom_select_Xpath).click()
 
     def click_on_gm(self):
         self.driver.find_element(By.XPATH,self.dropDown_uomGm_Xpath).click()
+
+
     def enter_alert_level(self,alertLevel):
         self.driver.find_element(By.XPATH,self.textBox_alertLevl_Xpath).send_keys(alertLevel)
 

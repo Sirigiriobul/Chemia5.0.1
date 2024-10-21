@@ -4,11 +4,10 @@ import pytest
 from selenium import webdriver
 from utilities.readProperties import ReadConfig
 
-@pytest.fixture(scope="class")
-def setUp(request):
+@pytest.fixture(scope="session")
+def setUp():
     driver = webdriver.Chrome()
     driver.get(ReadConfig.get_AdminURL())
-    request.cls.driver = driver
     yield driver
     driver.quit()
 

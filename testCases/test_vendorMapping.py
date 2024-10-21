@@ -7,44 +7,28 @@ from utilities.readProperties import ReadConfig
 from utilities.customLogger import logMaker
 
 @pytest.mark.usefixtures("setUp")
+#@pytest.mark.run(order=4)
 class Test_04_VendorMapping:
-    admin_page_url = ReadConfig.get_AdminURL()
-    userName = ReadConfig.get_userName()
-    password = ReadConfig.get_password()
     logger = logMaker.logGenerator()
-    @pytest.mark.order(5)
-    #@pytest.mark.run(order=5)
+    #@pytest.mark.order(4)
+
+    @pytest.mark.run(order=5)
     @pytest.mark.sanity
     def test_vendor_mapping(self, setUp):
         self.logger.info("********Vendor Mapping Test Started***********")
         self.driver = setUp
-        self.driver.implicitly_wait(20)
-        self.driver.get(self.admin_page_url)
-        self.driver.maximize_window()
+        self.venMap=VendorMapping(self.driver)
+        time.sleep(5)
+        self.venMap.click_on_main_menu()
+        self.venMap.click_on_sub_menu()
+        self.venMap.click_on_vendor_mapping()
+        time.sleep(5)
+      #  self.venMap.click_on_add_button()
 
-        # Log in to the application
-        self.login = Login(self.driver)
-        self.login.enter_userName(self.userName)
-        self.login.enter_Password(self.password)
-        self.login.clicking_on_login()
-        self.logger.info("*****Logged into application*****")
+    ''' self.venMap.enter_Material_Code("materialCode")
+        self.driver.save_screenshot("./screenshots/vendorMapping.png")'''
 
-        # Navigate to Vendor Mapping
-        self.vendor_map = VendorMapping(self.driver)
-        self.login.clicking_on_labInventory()
-        time.sleep(5)  # Adjust timing as necessary
-        self.vendor_map.click_on_main_menu()
-        self.vendor_map.click_on_sub_menu()
-        self.vendor_map.click_on_vendor_mapping()
-        time.sleep(3)
-        self.vendor_map.click_on_add_button()
 
-    '''
-        # Enter material code or other required details
-        self.vendor_map.enter_material_code("materialCode")
-        self.driver.save_screenshot("./screenshots/vendorMapping.png")  # Take a screenshot for verification
-
-'''
 
 
 '''import time

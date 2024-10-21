@@ -4,7 +4,7 @@ class VendorMapping:
     menu_id = "sidebar-toggle"
     submenu_InvMasterdata_Xpath = "//span[text()='Inv Master Data']"
     submenu_vendorMapping_Xpath = "//ul[@class='dropdown-menu ng-star-inserted']/child::li[3]"
-    button_add_Xpath = "//div[@class='panelTitle1 ng-tns-c179-20']/mat-icon[1]"
+    button_add_Xpath = "//mat-icon [@id='add'][1]"
     textBox_materialCode_xpath="//p-autocomplete[@formcontrolname='matCode']"
     textBox_materialName_Xpath="//span[@class='ng-tns-c135-13 p-autocomplete p-component']"
     button_save_Xpath="//span[text()=' Save ']"
@@ -24,6 +24,11 @@ class VendorMapping:
 
     def click_on_add_button(self):
         self.driver.find_element(By.XPATH,self.button_add_Xpath).click()
+    def enter_Material_Code(self,materialCode):
+        self.driver.find_element(By.XPATH,self.textBox_materialCode_xpath).send_keys(materialCode)
+    def enter_Material_Name(self,materialName):
+        self.driver.find_element(By.XPATH,self.textBox_materialName_Xpath).clear()
+        self.driver.find_element(By.XPATH,self.textBox_materialName_Xpath).send_keys(materialName)
 
 
 '''

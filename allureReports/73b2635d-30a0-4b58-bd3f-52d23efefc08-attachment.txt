@@ -1,0 +1,1 @@
+[32mINFO    [0m root:test_addMaterial.py:22 *****Test_02_Add_Material_started*****
