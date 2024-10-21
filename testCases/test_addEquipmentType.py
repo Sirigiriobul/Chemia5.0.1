@@ -11,6 +11,7 @@ from utilities.readProperties import ReadConfig
 @pytest.mark.usefixtures(order=6)
 class Test_05_AddEquipmentType:
     logger=logMaker.logGenerator()
+    ''''''
     @pytest.mark.run(order=7)
     def test_add_equipment_cancel_button(self,setUp):
         self.logger.info("******Add equipment is started*********")
