@@ -4,7 +4,7 @@ from selenium.webdriver.common.by import By
 class InstrumentType:
     menu_id = "sidebar-toggle"
     submenu_EquipMasterdata_Xpath = "//span[text()='Equip Master Data']"
-    submenu_instrumentType_Xpath = "//ul[@class='dropdown-menu ng-star-inserted']/li[1]"
+    submenu_instrumentType_Xpath = "//ul[@class='dropdown-menu ng-star-inserted']/li[2]"
     button_add_id = "add"
     textBox_instrumentType_Xpath="//input[@formcontrolname='instrTye']"
     movable_dropDown_Xpath="//span[@class='p-dropdown-label p-inputtext p-placeholder ng-star-inserted']"
@@ -15,19 +15,21 @@ class InstrumentType:
 
     def __init__(self,driver):
         self.driver=driver
-    def clicking_menu(self):
-        self.driver.find_element(By.ID,self.menu_id).click()
 
-    def clicking_submenu_EquipMasterData(self):
-        self.driver.find_element(By.XPATH,self.submenu_EquipMasterdata_Xpath).click()
+    def click_on_main_menu(self):
+        self.driver.find_element(By.ID, self.menu_id).click()
+
+    def click_on_equipMasterData_subMenu(self):
+        self.driver.find_element(By.XPATH, self.submenu_EquipMasterdata_Xpath).click()
+
     def clicking_on_submenu_instrument_menu(self):
         self.driver.find_element(By.XPATH,self.submenu_instrumentType_Xpath).click()
 
     def clicking_on_add_button(self):
         self.driver.find_element(By.ID,self.button_add_id).click()
 
-    def entering_instrumenttype(self,insType):
-        self.driver.find_element(By.XPATH,self.entering_instrumenttype).send_keys(insType)
+    def click_on_instrumenttype(self,insType):
+        self.driver.find_element(By.XPATH,self.textBox_instrumentType_Xpath).send_keys(insType)
 
     def clicking_on_movable_dropDown(self):
         self.driver.find_element(By.XPATH,self.movable_dropDown_Xpath).click()
