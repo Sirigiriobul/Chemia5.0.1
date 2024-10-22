@@ -21,5 +21,7 @@ class Test_07_EquipMasterData:
         self.equipAudit.click_on_go_button()
         time.sleep(5)
 
+#Good
+
 
 

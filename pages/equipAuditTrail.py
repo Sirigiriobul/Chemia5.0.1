@@ -18,3 +18,4 @@ class equipMasterDataAuditTrail:
 
     def click_on_go_button(self):
         self.driver.find_element(By.XPATH, self.go_button_Xpath).click()
+#Good
